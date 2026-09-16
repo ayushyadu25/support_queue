@@ -29,7 +29,7 @@ This project is configured to deploy as one free Render web service. Render buil
 
 2. In [Render](https://render.com/), choose **New → Blueprint**, select the GitHub repository, and approve the detected `render.yaml` configuration.
 3. In Render’s environment-variable screen, set `MONGODB_URI` to your Atlas connection string. Do not put it in GitHub.
-4. Click **Apply**. Render runs `npm ci && npm run build`, then `npm start`, and gives you a public `onrender.com` link.
+4. Click **Apply**. Render installs the React build tools, builds the app, prunes build-only dependencies, then runs `npm start`. It gives you a public `onrender.com` link.
 
 Use an Atlas M0 Free cluster for the database. Atlas Free clusters are suited to small proof-of-concept apps and do not expire. In Atlas, create a database user and allow the Render service to connect; for a simple demo this usually means adding `0.0.0.0/0` to the IP access list, while a production deployment should use a tighter network policy.
 
@@ -72,3 +72,12 @@ The AI triage button always puts overdue tickets first. Without an API key, it u
 - `POST /api/tickets` creates a ticket assigned to the current user.
 - `PATCH /api/tickets/:id` updates the current user’s ticket status.
 - `POST /api/tickets/:id/move` swaps a current user’s ticket up or down in their own manual queue.
+
+
+Some images 
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
